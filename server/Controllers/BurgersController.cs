@@ -9,4 +9,10 @@ public class BurgersController : ControllerBase
   {
     return Ok("🍔 test success!");
   }
+
+[HttpGet("burgers")]
+public ActionResult<Burger> GegAllBurgers()
+{
+return Ok("burger get test")
+}
 }
