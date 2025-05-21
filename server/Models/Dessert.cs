@@ -1,4 +1,4 @@
-public class Burger
+public class Dessert
 {
   public int Id { get; set; }
   public string Name { get; set; }

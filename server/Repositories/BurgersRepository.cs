@@ -28,7 +28,7 @@ public class BurgersRepository : IRepository<Burger>
 
   public bool Delete(int id)
   {
-    string sql = "DELETE FROM burgers WHERE id = @id LIMIT 1;";
+    string sql = "DELETE FROM burgers WHERE id = @Id LIMIT 1;";
     return _db.Execute(sql, new { id }) > 0;
   }
 

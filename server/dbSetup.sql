@@ -14,4 +14,18 @@ CREATE TABLE burgers (
     img_url VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE desserts (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2),
+    img_url VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE salads (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2),
+    img_url VARCHAR(255) NOT NULL
+);
+
 DROP TABLE burgers
