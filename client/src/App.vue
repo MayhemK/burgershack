@@ -8,15 +8,18 @@ import { RouterView } from 'vue-router';
   <header>
     <Navbar />
   </header>
-  <main>
-    <RouterView/>
+  <main class="main-bg">
+    <RouterView />
   </main>
   <footer class=" text-center">
-    Made with <i class="mdi mdi-heart text-pink"></i> by CodeWorks
+    Made with <i class="mdi mdi-heart text-pink"></i> by Ivan
   </footer>
 </template>
 
 <style lang="scss">
-
-
+.main-bg {
+  background-image: url(https://texturelabs.org/wp-content/uploads/Texturelabs_Wood_160S.jpg);
+  max-width: 100%;
+  object-fit: cover;
+}
 </style>

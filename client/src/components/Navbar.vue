@@ -20,8 +20,8 @@ watch(theme, () => {
   <nav class="navbar navbar-expand-md bg-codeworks border-bottom border-vue">
     <div class="container gap-2">
       <RouterLink :to="{ name: 'Home' }" class="d-flex align-items-center text-light">
-        <img class="navbar-brand" alt="logo" src="/img/cw-logo.png" height="45" />
-        <b class="fs-5">Vue Starter</b>
+        <div class="mdi mdi-hamburger fs-1"> </div>
+        <b class="fs-5 mx-3">Burger Shack</b>
       </RouterLink>
       <!-- collapse button -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links"
