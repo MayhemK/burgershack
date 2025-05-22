@@ -8,7 +8,7 @@ defineProps({
 
 
 <template>
-  <div class="card">
+  <div class="card m-1">
     <div class="card-header">
       {{ l.name }}
     </div>
