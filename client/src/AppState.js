@@ -11,6 +11,8 @@ export const AppState = reactive({
   /** @type {import('./models/Food.js').Food[]} */
   salads: [],
   /** @type {import('./models/Food.js').Food[]} */
-  desserts: []
+  desserts: [],
+  /** @type {{ id: string, name: string, price: number, quantity: number }[]} */
+  clickedItems: []
 })
 

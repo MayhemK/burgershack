@@ -4,7 +4,9 @@ import ListingCard from '@/components/ListingCard.vue';
 import OrderCard from '@/components/OrderCard.vue';
 import { burgersService } from '@/services/BurgersService.js';
 import { dessertsService } from '@/services/DessertsService.js';
+import { orderService } from '@/services/OrderService.js';
 import { saladsService } from '@/services/SaladsService.js';
+import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
 import { computed, onMounted } from 'vue';
 
@@ -19,16 +21,21 @@ onMounted(() => {
 
 async function GetAll() {
   try {
-    await burgersService.GetAll()
-    await saladsService.GetAll()
-    await dessertsService.GetAll()
+    await Promise.all([burgersService.GetAll(),
+    saladsService.GetAll(),
+    dessertsService.GetAll()])
+    logger.log('got all')
   }
   catch (error) {
     Pop.error(error);
   }
 }
+// NOTE don't do on more data, do promise all
 
 
+function handleItemSelection(item) {
+  orderService.addItemToOrder(item)
+}
 
 </script>
 
@@ -56,7 +63,7 @@ async function GetAll() {
             </div>
             <div class="row">
               <div v-for="b in B" :key="b.id" class="col-3">
-                <ListingCard :l="b" />
+                <ListingCard :l="b" @itemClicked="handleItemSelection" />
               </div>
             </div>
           </div>
@@ -68,7 +75,7 @@ async function GetAll() {
             </div>
             <div class="row">
               <div v-for="s in S" :key="s.id" class="col-3">
-                <ListingCard :l="s" />
+                <ListingCard :l="s" @itemClicked="handleItemSelection" />
               </div>
             </div>
           </div>
@@ -80,7 +87,7 @@ async function GetAll() {
             </div>
             <div class="row">
               <div v-for="d in D" :key="d.id" class="col-3">
-                <ListingCard :l="d" />
+                <ListingCard :l="d" @itemClicked="handleItemSelection" />
               </div>
             </div>
           </div>

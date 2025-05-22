@@ -28,7 +28,11 @@ CREATE TABLE salads (
     img_url VARCHAR(255) NOT NULL
 );
 
-DROP TABLE burgers
+ALTER TABLE desserts AUTO_INCREMENT = 10000;
+
+DELETE FROM desserts;
+
+DROP TABLE salads
 
 INSERT INTO
     burgers (name, price, img_url)
